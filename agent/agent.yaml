@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/microsoft/AgentSchema/refs/heads/main/schemas/v1.0/ContainerAgent.yaml
+kind: hosted
+name: supplements-specialist
+description: Contoso Market supplements ops specialist (Microsoft Agent Framework). Role selected via SPECIALIST_ROLE.
+protocols:
+  - protocol: responses
+    version: 1.0.0
+resources:
+  cpu: "0.5"
+  memory: 1Gi
+environment_variables:
+  - name: AZURE_AI_MODEL_DEPLOYMENT_NAME
+    value: ${AZURE_AI_MODEL_DEPLOYMENT_NAME}
+  # Role: inventory | forecast | compliance. Set per hosted-agent deployment.
+  # (AGENT_* and FOUNDRY_* env names are reserved by Foundry, so we use SPECIALIST_ROLE.)
+  - name: SPECIALIST_ROLE
+    value: ${SPECIALIST_ROLE}

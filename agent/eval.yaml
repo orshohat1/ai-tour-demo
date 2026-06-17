@@ -1,0 +1,16 @@
+# Local evaluation intent for the Supplier & Compliance specialist agent.
+# Consumed by the Foundry observe workflow (Azure MCP `evaluation_agent_batch_eval_create`).
+# Dataset cases cover the grocery catalog — the SKU-1006 (Surge Energy Drink)
+# recall case is the one the weak baseline misses and the improved agent catches.
+name: compliance-specialist-eval
+agent:
+  name: compliance-specialist
+  kind: hosted
+  version: "1"
+dataset_file: eval/compliance_golden.jsonl
+evaluators:
+  - builtin.task_adherence
+  - builtin.intent_resolution
+options:
+  eval_model: gpt-5-mini
+  pass_threshold: 0.8

@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+coverage/
+infra/main.json
+
+# Azure / azd
+.azure/
+
+# Secrets & logs
+.env
+*.log
+
+# Python (deploy scripts & venvs)
+.venv/
+.venv-deploy/
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+docs/
