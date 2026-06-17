@@ -55,6 +55,9 @@ param agentForecastName string = ''
 @description('Name of the Supplier & Compliance specialist Foundry hosted agent (optional).')
 param agentComplianceName string = ''
 
+@description('Name of the Ops Review multi-agent workflow Foundry hosted agent (optional).')
+param agentOpsName string = ''
+
 // ===================== //
 // AZD Pattern: Monitoring (Log Analytics + App Insights)
 // ===================== //
@@ -228,6 +231,9 @@ module containerAppApi 'br/public:avm/ptn/azd/acr-container-app:0.4.0' = {
       ] : [],
       !empty(agentComplianceName) ? [
         { name: 'AGENT_COMPLIANCE_NAME', value: agentComplianceName }
+      ] : [],
+      !empty(agentOpsName) ? [
+        { name: 'AGENT_OPS_NAME', value: agentOpsName }
       ] : []
     )
     secrets: [

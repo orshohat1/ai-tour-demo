@@ -48,6 +48,9 @@ param agentForecastName string = ''
 @description('Supplier & Compliance specialist Foundry hosted agent name (optional).')
 param agentComplianceName string = ''
 
+@description('Ops Review multi-agent workflow Foundry hosted agent name (optional).')
+param agentOpsName string = ''
+
 var tags = { 'azd-env-name': environmentName }
 var resourceSuffix = take(uniqueString(subscription().id, environmentName), 6)
 var shortName = take(replace(environmentName, '-', ''), 10)
@@ -79,6 +82,7 @@ module resources './resources.bicep' = {
     agentInventoryName: agentInventoryName
     agentForecastName: agentForecastName
     agentComplianceName: agentComplianceName
+    agentOpsName: agentOpsName
   }
 }
 

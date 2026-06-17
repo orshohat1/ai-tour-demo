@@ -11,6 +11,7 @@
     "agentInventoryName": { "value": "${AGENT_INVENTORY_NAME=}" },
     "agentForecastName": { "value": "${AGENT_FORECAST_NAME=}" },
     "agentComplianceName": { "value": "${AGENT_COMPLIANCE_NAME=}" },
+    "agentOpsName": { "value": "${AGENT_OPS_NAME=}" },
     "resourceGroupName": { "value": "${AZURE_RESOURCE_GROUP=rg-${AZURE_ENV_NAME}}" }
   }
 }
